@@ -24,9 +24,16 @@ int main(int argc, char *argv[]) {
             result = a + b;
             printf("%d + %d = %d\n", a, b, result);
             break;
+
         case '^':
             result = (int)pow(a, b);
             printf("%d ^ %d = %d\n", a, b, result);
+
+        case 'm':
+            result = a * b;
+            printf("%d * %d = %d\n", a, b, result);
+            break;
+
         default:
             usage(argv[0]);
     }
