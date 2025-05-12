@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 
 void usage(char *program_name) {
     printf("Uzycie: %s <liczba1> <operacja> <liczba2>\n", program_name);
-    printf("Dostepne operacje: + - / m /\n");
+    printf("Dostepne operacje: + - / m ^\n");
     exit(1);
 }
 
@@ -23,10 +24,16 @@ int main(int argc, char *argv[]) {
             result = a + b;
             printf("%d + %d = %d\n", a, b, result);
             break;
+
+        case '^':
+            result = (int)pow(a, b);
+            printf("%d ^ %d = %d\n", a, b, result);
+
         case 'm':
             result = a * b;
             printf("%d * %d = %d\n", a, b, result);
             break;
+
         default:
             usage(argv[0]);
     }
